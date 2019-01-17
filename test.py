@@ -20,19 +20,21 @@ from torch.autograd import Variable
 import torch.optim as optim
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--batch_size", type=int, default=16, help="size of each image batch")
-parser.add_argument("--model_config_path", type=str, default="config/yolov3.cfg", help="path to model config file")
-parser.add_argument("--data_config_path", type=str, default="config/coco.data", help="path to data config file")
-parser.add_argument("--weights_path", type=str, default="weights/yolov3.weights", help="path to weights file")
-parser.add_argument("--class_path", type=str, default="data/coco.names", help="path to class label file")
+parser.add_argument("--batch_size", type=int, default=4, help="size of each image batch")
+parser.add_argument("--model_config_path", type=str, default="config/yolov3_test_anchor.cfg", help="path to model config file")
+parser.add_argument("--data_config_path", type=str, default="config/obj.data", help="path to data config file")
+parser.add_argument("--weights_path", type=str, default="weights/yolov3_train_30000.weights", help="path to weights file")
+parser.add_argument("--class_path", type=str, default="data/obj.names", help="path to class label file")
 parser.add_argument("--iou_thres", type=float, default=0.5, help="iou threshold required to qualify as detected")
 parser.add_argument("--conf_thres", type=float, default=0.5, help="object confidence threshold")
 parser.add_argument("--nms_thres", type=float, default=0.45, help="iou thresshold for non-maximum suppression")
 parser.add_argument("--n_cpu", type=int, default=0, help="number of cpu threads to use during batch generation")
-parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
+parser.add_argument("--img_size", type=int, default=608, help="size of each image dimension")
 parser.add_argument("--use_cuda", type=bool, default=True, help="whether to use cuda if available")
 opt = parser.parse_args()
 print(opt)
+
+image_real_size = 256
 
 cuda = torch.cuda.is_available() and opt.use_cuda
 
@@ -51,7 +53,7 @@ if cuda:
 model.eval()
 
 # Get dataloader
-dataset = ListDataset(test_path)
+dataset = ListDataset(test_path, opt.img_size)
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batch_size, shuffle=False, num_workers=opt.n_cpu)
 
 Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
@@ -98,7 +100,9 @@ for batch_i, (_, imgs, targets) in enumerate(tqdm.tqdm(dataloader, desc="Detecti
             annotation_boxes[:, 1] = _annotation_boxes[:, 1] - _annotation_boxes[:, 3] / 2
             annotation_boxes[:, 2] = _annotation_boxes[:, 0] + _annotation_boxes[:, 2] / 2
             annotation_boxes[:, 3] = _annotation_boxes[:, 1] + _annotation_boxes[:, 3] / 2
-            annotation_boxes *= opt.img_size
+            annotation_boxes *= image_real_size
+            scale = opt.img_size / image_real_size
+            annotation_boxes *= scale
 
             for label in range(num_classes):
                 all_annotations[-1][label] = annotation_boxes[annotation_labels == label, :]
@@ -109,7 +113,7 @@ for label in range(num_classes):
     scores = []
     num_annotations = 0
 
-    for i in tqdm.tqdm(range(len(all_annotations)), desc=f"Computing AP for class '{label}'"):
+    for i in tqdm.tqdm(range(len(all_annotations)), desc="Computing AP for class '{}'".format(label)):
         detections = all_detections[i][label]
         annotations = all_annotations[i][label]
 
@@ -159,7 +163,7 @@ for label in range(num_classes):
 
 print("Average Precisions:")
 for c, ap in average_precisions.items():
-    print(f"+ Class '{c}' - AP: {ap}")
+    print("+ Class '{}' - AP: {}".format(c, ap))
 
 mAP = np.mean(list(average_precisions.values()))
-print(f"mAP: {mAP}")
+print("mAP: {}".format(mAP))
