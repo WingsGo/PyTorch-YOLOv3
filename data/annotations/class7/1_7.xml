@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class7</folder>
+	<filename>1_7.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class7/1_7.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Braised Eggplant</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>11</ymin>
+			<xmax>256</xmax>
+			<ymax>245</ymax>
+		</bndbox>
+	</object>
+</annotation>

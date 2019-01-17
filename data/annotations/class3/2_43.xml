@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class3</folder>
+	<filename>2_43.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class3/2_43.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Oyster sauce with lettuce</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5</xmin>
+			<ymin>40</ymin>
+			<xmax>238</xmax>
+			<ymax>223</ymax>
+		</bndbox>
+	</object>
+</annotation>

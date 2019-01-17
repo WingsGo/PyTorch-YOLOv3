@@ -1,0 +1,14 @@
+<annotation>
+	<folder>class4</folder>
+	<filename>11_0.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class4/11_0.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>

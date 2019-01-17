@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class5</folder>
+	<filename>1_28.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class5/1_28.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Chili and sour potato</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>18</xmin>
+			<ymin>88</ymin>
+			<xmax>238</xmax>
+			<ymax>221</ymax>
+		</bndbox>
+	</object>
+</annotation>

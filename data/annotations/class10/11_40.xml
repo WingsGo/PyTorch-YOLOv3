@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class10</folder>
+	<filename>11_40.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class10/11_40.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Braised Chicken</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>26</xmin>
+			<ymin>111</ymin>
+			<xmax>190</xmax>
+			<ymax>204</ymax>
+		</bndbox>
+	</object>
+</annotation>

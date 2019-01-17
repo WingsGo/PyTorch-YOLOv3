@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class4</folder>
+	<filename>8c7_43259f02_39d1_4110_9c4d_44017963318e_0.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class4/8c7_43259f02_39d1_4110_9c4d_44017963318e_0.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Steamed egg custard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>37</xmin>
+			<ymin>99</ymin>
+			<xmax>167</xmax>
+			<ymax>167</ymax>
+		</bndbox>
+	</object>
+</annotation>

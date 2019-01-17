@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class2</folder>
+	<filename>2cb50221fd474e4d547581846c1b1a44.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class2/2cb50221fd474e4d547581846c1b1a44.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Tomato scrambled eggs</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>101</ymin>
+			<xmax>244</xmax>
+			<ymax>237</ymax>
+		</bndbox>
+	</object>
+</annotation>

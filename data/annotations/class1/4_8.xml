@@ -1,0 +1,26 @@
+<annotation>
+	<folder>class1</folder>
+	<filename>4_8.jpg</filename>
+	<path>/home/wingc/SourceCode/Dissertation/data/images/class1/4_8.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>256</width>
+		<height>256</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Shredded cabbage</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>23</ymin>
+			<xmax>256</xmax>
+			<ymax>247</ymax>
+		</bndbox>
+	</object>
+</annotation>
